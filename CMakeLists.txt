@@ -56,7 +56,8 @@ add_definitions(-DDEBUG=1)
 # Include directories
 include_directories(
         bsp/RVMSIS
-        bsp/StdPeriphDriver/inc)
+        bsp/StdPeriphDriver/inc
+        bsp/BLE_LIB)
 
 # Source files
 file(
@@ -83,8 +84,10 @@ add_link_options(-T ${LINKER_SCRIPT})
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
 
 # Link the static libraries
-target_link_libraries(${PROJECT_NAME}.elf
-        ${CMAKE_SOURCE_DIR}/bsp/StdPeriphDriver/libISP583.a)
+target_link_libraries(
+        ${PROJECT_NAME}.elf
+        ${CMAKE_SOURCE_DIR}/bsp/StdPeriphDriver/libISP583.a
+        ${CMAKE_SOURCE_DIR}/bsp/BLE_LIB/LIBCH58xBLE.a)
 
 # Generate binary and hex files
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
