@@ -58,7 +58,8 @@ include_directories(
         bsp/RVMSIS
         bsp/StdPeriphDriver/inc
         bsp/BLE_LIB
-        bsp/HAL/include)
+        bsp/HAL/include
+        app/include)
 
 # Source files
 file(
@@ -90,6 +91,8 @@ target_link_libraries(
         ${PROJECT_NAME}.elf
         ${CMAKE_SOURCE_DIR}/bsp/StdPeriphDriver/libISP583.a
         ${CMAKE_SOURCE_DIR}/bsp/BLE_LIB/LIBCH58xBLE.a)
+
+target_compile_definitions(${PROJECT_NAME}.elf PRIVATE CMAKE_EXPORT_COMPILE_COMMANDS=1)
 
 # Generate binary and hex files
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
