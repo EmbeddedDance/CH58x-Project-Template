@@ -58,7 +58,8 @@ include_directories(
         bsp/RVMSIS
         bsp/StdPeriphDriver/inc
         bsp/BLE_LIB
-        bsp/HAL/include)
+        bsp/HAL/include
+        app/include)
 
 # Source files
 file(
