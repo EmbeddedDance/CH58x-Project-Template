@@ -57,7 +57,8 @@ add_definitions(-DDEBUG=1)
 include_directories(
         bsp/RVMSIS
         bsp/StdPeriphDriver/inc
-        bsp/BLE_LIB)
+        bsp/BLE_LIB
+        bsp/HAL/include)
 
 # Source files
 file(
@@ -66,6 +67,7 @@ file(
         "bsp/Startup/*.S"
         "bsp/RVMSIS/*.c"
         "bsp/StdPeriphDriver/*.c"
+        "bsp/HAL/*.c"
         "app/*.c")
 
 # Link options
