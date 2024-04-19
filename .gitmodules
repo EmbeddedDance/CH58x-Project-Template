@@ -1,3 +1,6 @@
 [submodule "bsp"]
 	path = bsp
 	url = git@github.com:EmbeddedDance/CH58x-BSP.git
+[submodule "tools"]
+	path = tools
+	url = git@github.com:EmbeddedDance/CH58x-Tools.git
